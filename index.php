@@ -8,17 +8,25 @@
 
 <?php get_header(); ?>
 
-<?php if( have_posts() ) : ?>
+<div class="container">
 
-	<?php while( have_posts() ) : the_post(); ?>
+    <div class="main" role="main">
 
-		<?php the_title(); ?>
-		<?php the_content(); ?>
+        <?php if( have_posts() ) : ?>
 
-	<?php endwhile; ?>
+        	<?php while( have_posts() ) : the_post(); ?>
 
-<?php endif; ?>
+        		<?php the_title(); ?>
 
-<?php get_sidebar(); ?>
+        		<?php the_content(); ?>
+
+        	<?php endwhile; ?>
+
+        <?php endif; ?>
+    </div>
+
+    <?php get_sidebar(); ?>
+
+</div>
 
 <?php get_footer(); ?>
