@@ -1,0 +1,10 @@
+$gf-menu-font-size: 2.4;
+
+$gf-numColumns: 18;
+@import "grout";
+
+
+
+.site-title{
+	@include col(6);
+}
