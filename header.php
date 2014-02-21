@@ -18,9 +18,22 @@
         <!-- Add your site or application content here -->
         <section class="row">
             <div class="container">
-                <div class="main" role="main">
-                    <h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-                </div>
+                <header id="masthead" class="header" >
+                    <div class="branding">
+                        <?php if ( get_header_image() ) : ?>
+
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+                                <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+                            </a>
+
+                        <?php endif; // End header image check. ?>
+
+                        
+                    </div>   
+                </header>
+                <nav id="primary-navigation" class="navbar navbar-horizontal navbar-justified">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+                </nav>
             </div>
         </section>
 

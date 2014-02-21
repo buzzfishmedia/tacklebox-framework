@@ -10,23 +10,39 @@
 
 <div class="container">
 
-    <div class="main" role="main">
+	<div id="content">
 
-        <?php if( have_posts() ) : ?>
+		<div class="row">
+		
+			<div class="container">
 
-        	<?php while( have_posts() ) : the_post(); ?>
+				<div id="primary">
 
-        		<?php the_title(); ?>
+					<div class="main" role="main">
 
-        		<?php the_content(); ?>
+					    <?php if( have_posts() ) : ?>
 
-        	<?php endwhile; ?>
+					    	<?php while( have_posts() ) : the_post(); ?>
 
-        <?php endif; ?>
-    </div>
+					    		<?php get_template_part( 'content', get_post_format() ); ?>
 
-    <?php get_sidebar(); ?>
+					    	<?php endwhile; ?>
 
+					    <?php endif; ?>
+					</div>
+					
+				</div>
+
+				<div id="secondary">
+
+					<?php get_sidebar(); ?>
+
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
 </div>
 
 <?php get_footer(); ?>

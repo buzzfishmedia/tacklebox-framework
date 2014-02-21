@@ -1,5 +1,16 @@
         </section>
 
+        <section class="row">
+            <div class="container">
+                <footer id="colophon">
+                    <p>
+                        <a href="<?php home_url(); ?>"><?php bloginfo('name' ); ?></a>
+                        &copy; 2011 - <?php echo date("Y") ?>
+                    </p>
+                </footer>
+            </div>
+        </section>
+
         <?php wp_footer(); ?>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

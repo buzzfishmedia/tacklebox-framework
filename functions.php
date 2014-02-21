@@ -51,7 +51,7 @@ $scripts = array(
 
 // Only use these scripts if we using front-end;
 if( ! is_admin() ){
-	$tacklebox->addScripts($scripts);
+	$tacklebox->loadScripts($scripts);
 }
 
 // Widgets
@@ -88,3 +88,6 @@ $widgets = array(
 
 );
 $tacklebox->addWidgets($widgets);
+
+// Custom Header
+require_once( get_template_directory() . '/inc/custom-header.php' );
