@@ -9,6 +9,7 @@ namespace Buzzfish;
 class Theme
 {
     public $theme_name;
+    public $scripts;
 
     public function __construct($name, $setup = array() )
     {
@@ -69,9 +70,9 @@ class Theme
      * Helper: wp_enqueue_scripts()
      *
      */
-    public function wpEnqueueScripts($cb)
+    public function wpEnqueueScripts()
     {
-        add_action('wp_enqueue_scripts', $cb );
+        add_action('wp_enqueue_scripts', array( $this, 'enqueueScripts' ) );
     }
 
     public function addThemeSupport($cb = '')
@@ -83,8 +84,11 @@ class Theme
      * Add scripts to the front-end
      *
      */
-    public function addScripts($scripts)
+    public function enqueueScripts()
     {
+        $scripts = $this->scripts;
+        
+
         foreach ($scripts as $script) {
 
             // Vars
@@ -99,9 +103,9 @@ class Theme
 
                 // Check Method
                 if ($method == 'register') {
-                    $load = wp_register_style($script['name'], $location, $deps, $vers );
+                    wp_register_style($script['name'], $location, $deps, $vers );
                 } else {
-                    $load = wp_enqueue_style($script['name'], $location, $deps, $vers );
+                    wp_enqueue_style($script['name'], $location, $deps, $vers );
                 }
 
             }
@@ -110,16 +114,16 @@ class Theme
 
                 // Check Method
                 if ($method == 'register') {
-                    $load = wp_register_script($script['name'], $location, $deps, $vers );
+                    wp_register_script($script['name'], $location, $deps, $vers );
                 } else {
-                    $load = wp_enqueue_script( $script['name'], $location, $deps, $vers );
+                    wp_enqueue_script( $script['name'], $location, $deps, $vers );
                 }
             }
 
-            $this->wpEnqueueScripts($load);
+            //$this->wpEnqueueScripts($load);
         }
 
-        return $load;
+        //return $this->scripts;
     }
 
     public function addWidgets($widgets)
@@ -128,6 +132,16 @@ class Theme
         foreach ($widgets as $widget) {
             register_sidebar( $widget );
         }
+    }
+
+    public function loadScripts($load){
+        $this->addScripts($load);
+        $this->wpEnqueueScripts();
+    }
+
+    public function addScripts($scripts){
+        $this->scripts = $scripts;
+        return $this->scripts;
     }
 
 }
