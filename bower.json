@@ -6,7 +6,8 @@
 		"**/*.md"
 	],
 	"dependencies": {
-		"grout": "*"
+		"grout": "*",
+		"wordpress-helpers": "git@github.com:buzzfishmedia/wordpress-helpers.git"
 	},
 	"devDependencies": {
 	}
