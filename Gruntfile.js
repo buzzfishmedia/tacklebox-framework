@@ -20,16 +20,21 @@ module.exports = function(grunt) {
 		},
 		bowercopy: {
 			scss: {
-			            options: {
-			                destPrefix: 'scss/'
-			            },
-			            files: {
-			                // Keys are destinations (prefixed with `options.destPrefix`)
-			                // Values are sources (prefixed with `options.srcPrefix`); One source per destination
-			                // e.g. 'bower_components/chai/lib/chai.js' will be copied to 'test/js/libs/chai.js'
-			                'scss/': 'grout/scss/'
-			            }
-			        }
+				options: {
+					destPrefix: 'scss/'
+				},
+				files: {
+					'scss/': 'grout/scss/'
+				}
+			},
+			wphelpers: {
+				options: {
+					destPrefix: 'src/'
+				},
+				files: {
+					'src/Helpers/': 'wordpress-helpers/src/WordPress/'
+				}
+			}
 		}
 
 	});
