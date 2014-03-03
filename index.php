@@ -33,14 +33,12 @@
 					
 				</div>
 
-				<div id="secondary">
-
-					<?php get_sidebar(); ?>
-
-				</div>
+				<?php get_sidebar(); ?>
 				
 			</div>
+
 		</div>
+		
 	</div>
 	
 </div>
