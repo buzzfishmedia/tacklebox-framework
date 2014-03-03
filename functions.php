@@ -55,7 +55,13 @@ if( ! is_admin() ){
 
 // Widgets
 $widgets = array(
-	
+	array(
+		'name' => __( 'Sidebar', 'tacklebox' ),
+		'id' => 'sidebar-1',
+		'before_title' => '<h2 class="widget-title">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>'
+	),
 	array(
 		'name' => __( 'Footer One', 'tacklebox' ),
 		'id' => 'footer-1',
@@ -76,15 +82,7 @@ $widgets = array(
 		'before_title' => '<h2 class="widget-title">',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>'
-	),
-	array(
-		'name' => __( 'Sidebar', 'tacklebox' ),
-		'id' => 'sidebar-1',
-		'before_title' => '<h2 class="widget-title">',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>'
 	)
-
 );
 $tacklebox->addWidgets($widgets);
 
