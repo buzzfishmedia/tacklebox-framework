@@ -87,7 +87,7 @@ $widgets = array(
 $tacklebox->addWidgets($widgets);
 
 // Custom Header
-//require_once( get_template_directory() . '/inc/custom-header.php' );
+require_once( get_template_directory() . '/lib/custom-header.php' );
 
 require_once( get_template_directory().'/vendor/autoload.php' );
 
