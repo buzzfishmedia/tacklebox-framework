@@ -20,6 +20,7 @@
             <div class="container">
                 <header id="masthead" class="header" >
                     <div class="branding">
+
                         <?php if ( get_header_image() ) : ?>
 
                             <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -27,8 +28,9 @@
                             </a>
 
                         <?php endif; // End header image check. ?>
-
                         
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                     </div>   
                 </header>
                 <nav id="primary-navigation" class="navbar navbar-horizontal navbar-justified">
