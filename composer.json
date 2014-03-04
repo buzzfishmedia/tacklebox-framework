@@ -2,9 +2,22 @@
 	"name": "buzzfishmedia/tacklebox-framework",
 	"version": "0.1.0",
 	"type": "wordpress-theme",
-	"autoload": {
-		"psr-0": {
-			"Buzzfish": "src/"
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Frank McCoy",
+			"email": "frank@buzzfishmedia.com",
+			"homepage": "https://github.com/fmccoy",
+			"role": "Developer"
 		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://repos.fmccoy.info"
+		}
+	],
+	"require": {
+		"buzzfishmedia/wordpress-helpers": "dev-master"
 	}
 }
