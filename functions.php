@@ -2,7 +2,7 @@
 
 if( defined('WP_COMPOSER') and WP_COMPOSER == false ){
 	require_once( get_template_directory() . '/src/Helpers/Theme.php' );
-	require_once( get_template_directory() . '/src/Helpers/AddMenuPage.php' );
+	//require_once( get_template_directory() . '/src/Helpers/AddMenuPage.php' );
 	require_once( get_template_directory() . '/src/Helpers/CustomPostType.php' );
 }
 
@@ -88,35 +88,8 @@ $tacklebox->addWidgets($widgets);
 
 // Custom Header
 require_once( get_template_directory() . '/lib/custom-header.php' );
+// Template Tags
+require_once( get_template_directory() . '/lib/template-tags.php' );
 
 require_once( get_template_directory().'/vendor/autoload.php' );
-
-
-/**
- * Create Page for Composer
- */
-
-$page = array( 'parent_slug' => 'tools.php' );
-$sections = array(
-	array('title' => 'Section 1'),
-	array('title' => 'Section 2')
-
-);
-$fields = array(
-	array(
-		'title' => 'Field 1',
-		'type' => 'text',
-		'section' => 'Section 1'
-	),
-	array(
-		'title' => 'Field 2',
-		'type' => 'text',
-		'section' => 'Section 2'
-	)
-);
-
-$composerpage = new WordPress\AddMenuPage("Get Composer", $page );
-$composerpage->setSections($sections);
-$composerpage->setFields($fields);
-
 
